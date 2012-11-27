@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SMHC" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SMHC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DCURL_STATICLIB" />
+					<Add option="-DSMHC_DEBUG" />
+					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-static" />
+					<Add library="libwxmsw29ud_core" />
+					<Add library="libwxmsw29ud_adv.a" />
+					<Add library="libwxpngd" />
+					<Add library="libwxjpegd" />
+					<Add library="libwxtiffd" />
+					<Add library="libwxzlibd" />
+					<Add library="curl" />
+					<Add library="rtmp" />
+					<Add library="idn" />
+					<Add library="ssl" />
+					<Add library="ssh2" />
+					<Add library="crypto" />
+					<Add library="wldap32" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="libcurl" />
+					<Add library="libwxbase29ud" />
+					<Add directory="$(#wx)/lib/gcc_lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SMHC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-O2" />
+					<Add option="-DCURL_STATICLIB" />
+					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#wx)/lib/gcc_lib/mswu" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static" />
+					<Add library="libwxmsw29u_core.a" />
+					<Add library="libwxmsw29u_adv.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxzlib.a" />
+					<Add library="curl" />
+					<Add library="rtmp" />
+					<Add library="idn" />
+					<Add library="ssl" />
+					<Add library="ssh2" />
+					<Add library="crypto" />
+					<Add library="z" />
+					<Add library="ws2_32" />
+					<Add library="wldap32" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="libcurl.a" />
+					<Add library="libwxbase29u.a" />
+					<Add directory="$(#wx)/lib/gcc_lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DwxUSE_UNICODE" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-Wall" />
+			<Add directory="$(#wx)/include" />
+			<Add directory="$(#wx)/contrib/include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="$(#wx)/include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-mthreads" />
+			<Add library="libkernel32.a" />
+			<Add library="libuser32.a" />
+			<Add library="libgdi32.a" />
+			<Add library="libwinspool.a" />
+			<Add library="libcomdlg32.a" />
+			<Add library="libadvapi32.a" />
+			<Add library="libshell32.a" />
+			<Add library="libole32.a" />
+			<Add library="liboleaut32.a" />
+			<Add library="libuuid.a" />
+			<Add library="libcomctl32.a" />
+			<Add library="libwsock32.a" />
+			<Add library="libodbc32.a" />
+		</Linker>
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="smhc_app.cpp" />
+		<Unit filename="smhc_app.h" />
+		<Unit filename="smhc_main.cpp" />
+		<Unit filename="smhc_main.h" />
+		<Unit filename="smhc_mycurl.cpp" />
+		<Unit filename="smhc_mycurl.h" />
+		<Unit filename="smhc_mydroptarget.cpp" />
+		<Unit filename="smhc_mydroptarget.h" />
+		<Unit filename="smhc_mythread.cpp" />
+		<Unit filename="smhc_mythread.h" />
+		<Unit filename="wxsmith/SMHCframe.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="SMHCApp.cpp" main="SMHCFrame" init_handlers="necessary" language="CPP" />
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="smhc_guiFrame">
+		<id_arg>0</id_arg>
+		<style>wxCAPTION|wxSYSTEM_MENU|wxCLOSE_BOX|wxMINIMIZE_BOX|wxCLIP_CHILDREN</style>
+		<object class="wxBoxSizer" variable="topSizer" member="no">
+			<object class="sizeritem">
+				<object class="wxPanel" name="ID_PANELMAIN" variable="PanelMain" member="yes">
+					<object class="wxBoxSizer" variable="BoxSizerMain" member="no">
+						<orient>wxVERTICAL</orient>
+						<object class="sizeritem">
+							<object class="wxBoxSizer" variable="BoxSizerCommon" member="no">
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizerLeft" member="no">
+										<orient>wxVERTICAL</orient>
+										<object class="sizeritem">
+											<object class="wxStaticBoxSizer" variable="StaticBoxSizerSrc" member="no">
+												<label>Source:</label>
+												<object class="sizeritem">
+													<object class="wxTextCtrl" name="ID_TEXTCTRL_SRC" variable="TextCtrlSrc" member="yes">
+														<style>wxTE_READONLY</style>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>2</border>
+													<option>1</option>
+												</object>
+												<object class="sizeritem">
+													<object class="wxButton" name="ID_BUTTON_BROWSE" variable="ButtonBrowse" member="yes">
+														<label>Browse</label>
+														<size>50,23</size>
+														<handler function="OnButtonBrowseClick" entry="EVT_BUTTON" />
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>2</border>
+												</object>
+											</object>
+											<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<border>2</border>
+											<option>1</option>
+										</object>
+										<object class="sizeritem">
+											<object class="wxBoxSizer" variable="BoxSizerThreads" member="no">
+												<object class="sizeritem">
+													<object class="wxStaticBoxSizer" variable="StaticBoxSizerThhreads" member="no">
+														<label>Threads:</label>
+														<object class="sizeritem">
+															<object class="wxSpinCtrl" name="ID_SPINCTRL" variable="SpinCtrlThreads" member="yes">
+																<value>10</value>
+																<min>1</min>
+																<max>25</max>
+																<size>49,21</size>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+													</object>
+													<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>2</border>
+												</object>
+												<object class="sizeritem">
+													<object class="wxStaticBoxSizer" variable="StaticBoxSizerCtrl" member="no">
+														<object class="sizeritem">
+															<object class="wxButton" name="ID_BUTTON_START" variable="ButtonStart" member="yes">
+																<label>Start</label>
+																<size>50,23</size>
+																<enabled>0</enabled>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxButton" name="ID_BUTTON_STOP" variable="ButtonStop" member="yes">
+																<label>Stop</label>
+																<size>50,23</size>
+																<enabled>0</enabled>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxButton" name="ID_BUTTON_EXIT" variable="ButtonExit" member="yes">
+																<label>Exit</label>
+																<size>50,23</size>
+																<enabled>0</enabled>
+															</object>
+															<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+													</object>
+													<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>2</border>
+													<option>1</option>
+												</object>
+											</object>
+											<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>2</border>
+									<option>1</option>
+								</object>
+								<object class="sizeritem">
+									<object class="wxBoxSizer" variable="BoxSizerRight" member="no">
+										<object class="sizeritem">
+											<object class="wxStaticBoxSizer" variable="StaticBoxSizerInfo" member="no">
+												<label>Info:</label>
+												<object class="sizeritem">
+													<object class="wxFlexGridSizer" variable="FlexGridSizerInfo" member="no">
+														<cols>2</cols>
+														<rows>4</rows>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+																<label>Threads:</label>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+															<option>1</option>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT_THALIVE" variable="StaticTextNumThAlive" member="yes">
+																<label>0</label>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+																<label>Overall:</label>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT_LINES" variable="StaticTextNumLines" member="yes">
+																<label>0</label>
+																<size>60,13</size>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_TOP</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT3" variable="StaticText3" member="yes">
+																<label>Bad:</label>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+															<option>1</option>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT_BAD" variable="StaticTextBad" member="yes">
+																<label>0</label>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT4" variable="StaticText4" member="yes">
+																<label>Good:</label>
+															</object>
+															<flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+															<option>1</option>
+														</object>
+														<object class="sizeritem">
+															<object class="wxStaticText" name="ID_STATICTEXT_GOOD" variable="StaticTextGood" member="yes">
+																<label>0</label>
+															</object>
+															<flag>wxALL|wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL</flag>
+															<border>2</border>
+														</object>
+													</object>
+													<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+													<border>2</border>
+												</object>
+											</object>
+											<flag>wxALL|wxEXPAND|wxALIGN_TOP|wxALIGN_CENTER_HORIZONTAL</flag>
+											<border>2</border>
+											<option>1</option>
+										</object>
+									</object>
+									<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>2</border>
+								</object>
+							</object>
+							<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+							<border>2</border>
+						</object>
+						<object class="sizeritem">
+							<object class="wxGauge" name="ID_GAUGE_MAIN" variable="GaugeMain" member="yes">
+								<size>100,10</size>
+							</object>
+							<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+							<border>2</border>
+						</object>
+						<object class="sizeritem">
+							<object class="wxTextCtrl" name="ID_TEXTCTRLLOG" variable="TextCtrlLog" member="yes">
+								<size>379,232</size>
+								<style>wxTE_MULTILINE|wxTE_READONLY</style>
+							</object>
+							<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+							<border>2</border>
+							<option>1</option>
+						</object>
+					</object>
+				</object>
+				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<option>1</option>
+			</object>
+		</object>
+	</object>
+</wxsmith>

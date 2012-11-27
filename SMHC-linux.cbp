@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SMHC" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/SMHC" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="curl" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="msn.ico" />
+		<Unit filename="msn.xpm" />
+		<Unit filename="smhc_app.cpp" />
+		<Unit filename="smhc_app.h" />
+		<Unit filename="smhc_main.cpp" />
+		<Unit filename="smhc_main.h" />
+		<Unit filename="smhc_mycurl.cpp" />
+		<Unit filename="smhc_mycurl.h" />
+		<Unit filename="smhc_mydroptarget.cpp" />
+		<Unit filename="smhc_mydroptarget.h" />
+		<Unit filename="smhc_mythread.cpp" />
+		<Unit filename="smhc_mythread.h" />
+		<Unit filename="wxsmith/SMHCframe.wxs" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
