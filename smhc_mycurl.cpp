@@ -8,7 +8,7 @@
 
 #include "smhc_mycurl.h"
 
-wxString MyCURL::url = "http://accountservices.passport.net/pp1350/memberexists.srf";
+wxString MyCURL::url = "http://accountservices.passport.net/pp1400/memberexists.srf";
 size_t WriteData(void *buffer, size_t size, size_t nmemb, void *userp) {return 0;}
 
 
