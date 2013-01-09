@@ -20,8 +20,8 @@ int         MyThread::num_good = 0;
 int         MyThread::num_bad = 0;
 int         MyThread::num_current = 0;
 int         MyThread::num_overall = 0;
-wxString    MyThread::notif_str = wxEmptyString;
-std::unique_ptr<wxNotificationMessage> MyThread::m_notif_msg (new wxNotificationMessage("SMHC"));
+//wxString    MyThread::notif_str = wxEmptyString;
+//std::unique_ptr<wxNotificationMessage> MyThread::m_notif_msg (new wxNotificationMessage("SMHC"));
 
 MyThread::MyThread() :
     wxThread(),
@@ -54,10 +54,10 @@ wxThread::ExitCode MyThread::Entry() {
             num_good++;
             file_good.AddLine(login);
             file_good.Write();
-            notif_str += login;
-            notif_str += '\n';
-            m_notif_msg->SetMessage(notif_str);
-            m_notif_msg->Show();
+            //notif_str += login;
+            //notif_str += '\n';
+            //m_notif_msg->SetMessage(notif_str);
+            //m_notif_msg->Show();
         }
         else {
             wxCriticalSectionLocker lock(mt_critsect);

@@ -42,8 +42,8 @@ private:
     static int num_current;
     static int num_overall;
 
-    static wxString notif_str;
-    static std::unique_ptr<wxNotificationMessage> m_notif_msg;
+    //static wxString notif_str;
+    //static std::unique_ptr<wxNotificationMessage> m_notif_msg;
 };
 
 
