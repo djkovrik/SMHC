@@ -10,10 +10,18 @@
 #include <wx/msgdlg.h>
 #include <wx/filedlg.h>
 
+#if defined(__WXMSW__)
+    #include <wx/notifmsg.h>
+    #include <wx/taskbar.h>
+#endif
+
 #include "smhc_main.h"
 #include "smhc_app.h"
 #include "smhc_mythread.h"
 #include "smhc_mydroptarget.h"
+
+#include "msn.xpm"
+
 
 DECLARE_APP(MyApp)
 
@@ -48,8 +56,20 @@ MyFrame::MyFrame(wxWindow* parent,wxWindowID id) :
     n_alive_threads(0),
     n_good(0),
     n_bad(0),
-    n_overall(0)
+    n_overall(0),
+    n_notify_str(wxEmptyString)
+    #if defined(__WXMSW__)
+        ,n_taskbarIcon(new wxTaskBarIcon()),
+        n_notify(new wxNotificationMessage("SMHC", wxEmptyString, this))
+    #endif
     {
+#if defined(__WXMSW__)
+    n_taskbarIcon->SetIcon(wxIcon(msn_xpm), "Hotmail checker");
+    n_notify->UseTaskBarIcon(n_taskbarIcon.get());
+#endif
+    //n_notify->SetMessage("Program started!");
+    //n_notify->Show();
+
     // UI generation
     // Initialize sizers
     wxStaticBoxSizer* StaticBoxSizerSrc;
@@ -183,7 +203,6 @@ void MyFrame::OnButtonStartClick(wxCommandEvent& event) {
         return;
     }
 
-
     filename_source = TextCtrlSrc->GetValue();
     n_threads_num   = SpinCtrlThreads->GetValue();
 
@@ -212,6 +231,8 @@ void MyFrame::OnButtonStopClick(wxCommandEvent& event) {
 
     wxCriticalSectionLocker enter(wxGetApp().myapp_critsect);
     wxGetApp().myapp_shut_down = true;
+
+    ButtonStop->Disable();
 
     MyThread::CloseFiles();
 
@@ -316,6 +337,14 @@ void MyFrame::OnIdle(wxIdleEvent &event) {
         temp << n_overall;
         StaticTextNumLines->SetLabel(temp);
     }
+#if defined(__WXMSW__)
+    if (n_notify_str != MyThread::GetNotifyStr()) {
+        n_notify_str = MyThread::GetNotifyStr();
 
+        n_notify->SetMessage(n_notify_str);
+        n_notify->Show();
+
+    }
+#endif
     event.Skip();
 }

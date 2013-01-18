@@ -19,8 +19,13 @@
 #include <wx/gauge.h>
 #include <wx/textfile.h>
 
+#include <memory>
 
 class MyThread;
+#if defined(__WXMSW__)
+    class wxTaskBarIcon;
+    class wxNotificationMessage;
+#endif
 
 class MyFrame: public wxFrame
 {
@@ -42,6 +47,12 @@ private:
     int         n_bad;
     int         n_overall;
 
+    wxString n_notify_str;
+
+#if defined(__WXMSW__)
+    std::unique_ptr<wxTaskBarIcon> n_taskbarIcon;
+    std::unique_ptr<wxNotificationMessage> n_notify;
+#endif
     // IDs
     static const long ID_TEXTCTRL_SRC;
     static const long ID_BUTTON_BROWSE;

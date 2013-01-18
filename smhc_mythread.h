@@ -12,7 +12,6 @@
 #include <memory>
 #include <wx/thread.h>
 #include <wx/textfile.h>
-#include <wx/notifmsg.h>
 #include "smhc_mycurl.h"
 
 class MyThread : public wxThread {
@@ -26,6 +25,7 @@ public:
     static int GetBad()     {return num_bad;}
     static int GetOverall() {return num_overall;}
     static int GetCurrent() {return num_current;}
+    static wxString GetNotifyStr() {return notif_str;}
 
     static wxString Read();
     static bool Check();
@@ -42,8 +42,7 @@ private:
     static int num_current;
     static int num_overall;
 
-    //static wxString notif_str;
-    //static std::unique_ptr<wxNotificationMessage> m_notif_msg;
+    static wxString notif_str;
 };
 
 
