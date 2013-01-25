@@ -210,6 +210,8 @@ void MyFrame::OnButtonStartClick(wxCommandEvent& event) {
 
     GaugeMain->SetRange( MyThread::GetOverall() );
 
+    n_threads_num = (n_threads_num < MyThread::GetOverall()) ? n_threads_num : MyThread::GetOverall();
+
     wxArrayThread threads;
     size_t n;
 
@@ -227,12 +229,13 @@ void MyFrame::OnButtonStartClick(wxCommandEvent& event) {
     event.Skip();
 }
 
+
 void MyFrame::OnButtonStopClick(wxCommandEvent& event) {
+
+    //ButtonStop->Disable();
 
     wxCriticalSectionLocker enter(wxGetApp().myapp_critsect);
     wxGetApp().myapp_shut_down = true;
-
-    ButtonStop->Disable();
 
     MyThread::CloseFiles();
 
@@ -308,10 +311,14 @@ void MyFrame::OnIdle(wxIdleEvent &event) {
     }
 
     else {
-        ButtonStop->Disable();
+        //ButtonStop->Disable();
         ButtonExit->Enable();
         ButtonStart->Enable();
     }
+
+    if (wxGetApp().myapp_shut_down == true || n_alive_threads == 0)
+        ButtonStop->Disable();
+
 
 
     if (n_good != MyThread::GetGood()) {
