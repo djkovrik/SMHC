@@ -16,7 +16,7 @@
 
 class MyThread : public wxThread {
 public:
-    explicit MyThread();
+    MyThread();
     virtual ~MyThread();
     virtual void* Entry();
 
